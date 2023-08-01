@@ -1,24 +1,20 @@
-// components/FeedbackOptions/FeedbackOptions.jsx
+// FeedbackOptions.jsx
 
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-class FeedbackOptions extends Component {
-  render() {
-    const { options, onLeaveFeedback } = this.props;
-
-    return (
-      <div>
-        <h2>Оставьте свой отзыв</h2>
-        {options.map((option) => (
-          <button key={option} onClick={() => onLeaveFeedback(option)}>
-            {option}
-          </button>
-        ))}
-      </div>
-    );
-  }
-}
+const FeedbackOptions = ({ options, onLeaveFeedback }) => {
+  return (
+    <div>
+      <h2>Оставьте свой отзыв</h2>
+      {options.map((option) => (
+        <button key={option} onClick={() => onLeaveFeedback(option)}>
+          {option}
+        </button>
+      ))}
+    </div>
+  );
+};
 
 FeedbackOptions.propTypes = {
   options: PropTypes.arrayOf(PropTypes.string).isRequired,
